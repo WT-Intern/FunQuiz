@@ -1,27 +1,38 @@
-package com.womantalk.funquiz.Question;
+package com.womantalk.funquiz.question;
 
-import com.womantalk.funquiz.Question.Question;
-import com.womantalk.funquiz.Question.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class QuestionServiceImpl implements QuestionService{
+@Service
+public class QuestionServiceImpl implements QuestionService {
+
     @Autowired
-    private QuestionRepository questionRepository;
+    QuestionRepository questionRepository;
 
     @Override
-    public void save(Question question) {
-        questionRepository.save(question);
+    public Question findOne(int id_option) {
+        return questionRepository.findOne(id_option);
     }
 
     @Override
-    public Question findById(int id) {
-        return questionRepository.findById(id);
+    public Question add(Question question) {
+        return null;
     }
 
     @Override
-    public List<Question> getAllQuestion() {
-        return questionRepository.getAllQuestion();
+    public List<Question> findAll() {
+        return questionRepository.findAll();
+    }
+
+    @Override
+    public int update(Question question) {
+        return 0;
+    }
+
+    @Override
+    public int delete(Question question) {
+        return 0;
     }
 }

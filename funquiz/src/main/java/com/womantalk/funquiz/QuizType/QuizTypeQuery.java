@@ -1,10 +1,20 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
 public class QuizTypeQuery {
-    public static final String SQL_INSERT = "insert into t_quizType (idQuizType, typeName) values (?, ?)";
-    public static final String SQL_FIND_BY_ID = "select * from t_quizType where idQuizType = ?";
-    public static final String SQL_GET_ALL = "select * from t_quizType";
+
+    //Display all Quiz Type
+    public static final String ALL_QUIZ_TYPE = "SELECT * FROM t_quiz_type ";
+
+    //Display Quiz Type by Id
+    public static final String QUIZ_TYPE_BY_ID = "SELECT * FROM t_quiz_type WHERE id_quiz_type =?";
+
+    //Add Quiz Type
+    public static final String INSERT_QUIZ_TYPE = "INSERT INTO t_quiz_type(type_name)VALUES (?)";
+
+    //Update Quiz Type by Id
+    public static final String UPDATE_QUIZ_TYPE = "UPDATE t_quiz_type SET id_quiz_type, type_name=? WHERE id_quiz_type =?";
+
+    //Delete Quiz Type by Id
+    public static final String DELETE_QUIZ_TYPE = "DELETE FROM t_quiz_type WHERE id_quiz_type=?";
+
 }

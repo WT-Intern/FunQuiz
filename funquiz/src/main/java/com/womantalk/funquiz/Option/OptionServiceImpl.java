@@ -1,27 +1,37 @@
-package com.womantalk.funquiz.Option;
+package com.womantalk.funquiz.option;
 
-import com.womantalk.funquiz.Option.Option;
-import com.womantalk.funquiz.Option.OptionService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class OptionServiceImpl implements OptionService {
+
     @Autowired
-    private  OptionRepository optionRepository;
+    OptionRepository optionRepository;
 
     @Override
-    public void save(Option option) {
-        optionRepository.save(option);
+    public Option findOne(int id_option) {
+        return optionRepository.findOne(id_option);
     }
 
     @Override
-    public Option findById(int id) {
-        return optionRepository.findById(id);
+    public Option add(Option option) {
+        return null;
     }
 
     @Override
-    public List<Option> getAllOption() {
-        return optionRepository.getAllOption();
+    public List<Option> findAll() {
+        return optionRepository.findAll();
+    }
+
+    @Override
+    public int update(Option option) {
+        return 0;
+    }
+
+    @Override
+    public int delete(Option option) {
+        return 0;
     }
 }

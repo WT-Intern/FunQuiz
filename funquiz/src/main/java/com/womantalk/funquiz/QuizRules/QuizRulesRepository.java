@@ -1,11 +1,19 @@
-package com.womantalk.funquiz.QuizRules;
+package com.womantalk.funquiz.quizrules;
 
-import com.womantalk.funquiz.QuizRules.QuizRules;
+
+import com.womantalk.funquiz.quizrules.QuizRules;
 
 import java.util.List;
 
 public interface QuizRulesRepository {
-    void save (QuizRules quizrules);
-    QuizRules findById (int id);
-    List<QuizRules> getAllQuizRules();
+
+    QuizRules findOne(int id_rules);
+
+    QuizRules add(QuizRules quizRules);
+
+    List<QuizRules> findAll();
+
+    int update(QuizRules quizRules);
+
+    int delete(QuizRules quizRules);
 }

@@ -1,12 +1,18 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import com.womantalk.funquiz.QuizType.QuizType;
 
 import java.util.List;
 
 public interface QuizTypeRepository {
-    void save (QuizType quiztype);
-    QuizType findById (int id);
-    List<QuizType> getAllQuizType();
+
+    QuizType findOne(int id_quiz_type);
+
+    QuizType add(QuizType quizType);
+
+    List<QuizType> findAll();
+
+    int update(QuizType quizType);
+
+    int delete(QuizType quizType);
 
 }

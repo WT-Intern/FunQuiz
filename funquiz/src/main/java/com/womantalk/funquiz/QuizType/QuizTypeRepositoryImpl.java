@@ -1,18 +1,13 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import com.womantalk.funquiz.QuizType.QuizType;
-import com.womantalk.funquiz.QuizType.QuizTypeQuery;
-import com.womantalk.funquiz.QuizType.QuizTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+@Repository
 public class QuizTypeRepositoryImpl implements QuizTypeRepository {
 
     @Autowired
@@ -23,42 +18,30 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
     }
 
     @Override
-    public void save(QuizType quiztype) {
-        String query = QuizTypeQuery.SQL_INSERT;
-        jdbcTemplate.update(query);
+    public QuizType findOne(int id_quiz_type) {
+        String SQL = QuizTypeQuery.QUIZ_TYPE_BY_ID ;
+        QuizType quizType = jdbcTemplate.queryForObject(SQL, new Object[]{id_quiz_type}, new BeanPropertyRowMapper<QuizType>(QuizType.class));
+        return quizType;
+    }
+    @Override
+    public QuizType add(QuizType quizType) {
+        return null;
     }
 
     @Override
-    public QuizType findById(int id) {
-        String query = QuizTypeQuery.SQL_FIND_BY_ID;
-        QuizType quiztype = jdbcTemplate.queryForObject(query, new Object[]{id}, new RowMapper<QuizType>() {
-            @Override
-            public QuizType mapRow(ResultSet rs, int rowNum) throws SQLException {
-                QuizType quiztype = new QuizType();
-                quiztype.setIdQuizType(rs.getInt("idQuizType"));
-                quiztype.setTypeName(rs.getString("typeName"));
-
-                return quiztype;
-            }
-        });
-
-        return quiztype;
+    public List<QuizType> findAll() {
+        String SQL = QuizTypeQuery.ALL_QUIZ_TYPE;
+        List quizType = jdbcTemplate.query(SQL, new BeanPropertyRowMapper<QuizType>(QuizType.class));
+        return quizType;
     }
 
     @Override
-    public List<QuizType> getAllQuizType() {
-        String query = QuizTypeQuery.SQL_GET_ALL;
-        List<QuizType> quizTypeList = new ArrayList<QuizType>();
-        List<Map<String, Object>> quizTypeRows = jdbcTemplate.queryForList(query);
+    public int update(QuizType quizType) {
+        return 0;
+    }
 
-        for (Map<String, Object> quizTypeRow : quizTypeRows) {
-            QuizType quiztype = new QuizType();
-            quiztype.setIdQuizType(Integer.parseInt(String.valueOf(quizTypeRow.get("idQuizType"))));
-            quiztype.setTypeName(String.valueOf(quizTypeRow.get("typeName")));
-
-            quizTypeList.add(quiztype);
-        }
-
-        return quizTypeList;
+    @Override
+    public int delete(QuizType quizType) {
+        return 0;
     }
 }

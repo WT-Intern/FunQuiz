@@ -1,27 +1,39 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import com.womantalk.funquiz.QuizType.QuizType;
-import com.womantalk.funquiz.QuizType.QuizTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class QuizTypeServiceImpl implements QuizTypeService{
+
     @Autowired
     private QuizTypeRepository quizTypeRepository;
 
     @Override
-    public void save(QuizType quiztype) {
-        quizTypeRepository.save(quiztype);
+    public QuizType findOne(int id_quiz_type) {
+        return quizTypeRepository.findOne(id_quiz_type);
     }
 
     @Override
-    public QuizType findById(int id) {
-        return quizTypeRepository.findById(id);
+    public QuizType add(QuizType quizType) {
+        return null;
     }
 
     @Override
-    public List<QuizType> getAllQuizType() {
-        return quizTypeRepository.getAllQuizType();
+    public List<QuizType> findAll() {
+        return quizTypeRepository.findAll();
+    }
+
+    @Override
+    public int update(QuizType quizType) {
+        return 0;
+    }
+
+    @Override
+    public int delete(QuizType quizType) {
+        return 0;
     }
 }

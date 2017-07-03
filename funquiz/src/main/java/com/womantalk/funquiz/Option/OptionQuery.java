@@ -1,11 +1,22 @@
-package com.womantalk.funquiz.Option;
+package com.womantalk.funquiz.option;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
+/**
+ * Created by gloria on 03/07/2017.
+ */
 public class OptionQuery {
-    public static final String SQL_INSERT = "insert into t_option (idOption, text, imageURL, type, value, idQuestion) values (?, ?, ?, ?, ?, ?)";
-    public static final String SQL_FIND_BY_ID = "select * from t_option where idOption = ?";
-    public static final String SQL_GET_ALL = "select * from t_option";
 
+    //Display all Option
+    public static final String ALL_OPTION = "SELECT * FROM t_option ORDER BY id_option ASC ";
+
+    //Display Option by Id
+    public static final String OPTION_BY_ID = "SELECT * FROM t_option WHERE id_option = ?";
+
+    //Add Option
+    public static final String INSERT_OPTION = "INSERT INTO t_option(id_option, imageurl, text, type, value, id_question)VALUES (?, ?, ?, ?, ?, ?)";
+
+    //Update Option by Id
+    public static final String UPDATE_OPTION = "UPDATE t_option SET imageurl=?, text=?, type=?, value=?, id_question WHERE id_option=?";
+
+    //Delete Option  by Id
+    public static final String DELETE_OPTION = "DELETE FROM t_option WHERE id_option=?";
 }

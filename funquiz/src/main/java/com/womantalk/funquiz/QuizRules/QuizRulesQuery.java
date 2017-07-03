@@ -1,10 +1,22 @@
-package com.womantalk.funquiz.QuizRules;
+package com.womantalk.funquiz.quizrules;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
+/**
+ * Created by gloria on 03/07/2017.
+ */
 public class QuizRulesQuery {
-    public static final String SQL_INSERT = "insert into t_quizRules (idRules, min, max, value, description, idQuiz) values (?, ?, ?, ?, ?, ?)";
-    public static final String SQL_FIND_BY_ID = "select * from t_quizRules where idRules = ?";
-    public static final String SQL_GET_ALL = "select * from t_quizRules";
+
+    //Display all Quiz Rules
+    public static final String ALL_QUIZ_RULES = "SELECT * FROM t_quiz_rules ORDER BY id_rules ASC";
+
+    //Display Quiz Rules by Id
+    public static final String QUIZ_RULES_BY_ID = "SELECT * FROM t_quiz_rules WHERE id_rules = ?";
+
+    //Add Quiz Rules
+    public static final String INSERT_QUIZ_RULES = "INSERT INTO t_quiz_rules(description, max, min, value, id_quiz)VALUES (?, ?, ?, ?, ?)";
+
+    //Update Quiz Rules by Id
+    public static final String UPDATE_QUIZ_RULES = "UPDATE t_quiz_rules SET id_rules, description=?, max=?, min=?, value=?, id_quiz WHERE id_rules=?";
+
+    //Delete Quiz Rules by Id
+    public static final String DELETE_QUIZ_RULES = "DELETE FROM t_quiz_rules WHERE id_rules=?";
 }

@@ -1,11 +1,17 @@
-package com.womantalk.funquiz.Quiz;
-
-import com.womantalk.funquiz.Quiz.Quiz;
+package com.womantalk.funquiz.quiz;
 
 import java.util.List;
 
 public interface QuizService {
-    void save (Quiz quiz);
-    Quiz findById (int id);
-    List<Quiz> getAllQuiz();
+
+    Quiz findOne(int id_quiz);
+
+    Quiz add(Quiz quiz);
+
+    List<Quiz> findAll();
+
+    int update(Quiz quiz);
+
+    int delete(Quiz quiz);
+
 }

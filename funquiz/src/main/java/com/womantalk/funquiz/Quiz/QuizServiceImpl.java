@@ -1,27 +1,37 @@
-package com.womantalk.funquiz.Quiz;
+package com.womantalk.funquiz.quiz;
 
-import com.womantalk.funquiz.Quiz.Quiz;
-import com.womantalk.funquiz.Quiz.QuizService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class QuizServiceImpl implements QuizService {
-    @Autowired
+
     private QuizRepository quizRepository;
 
     @Override
-    public void save(Quiz quiz) {
-        quizRepository.save(quiz);
+    public Quiz findOne(int id_quiz) {
+        return quizRepository.findOne(id_quiz);
     }
 
     @Override
-    public Quiz findById(int id) {
-        return quizRepository.findById(id);
+    public Quiz add(Quiz quiz) {
+        return null;
     }
 
     @Override
-    public List<Quiz> getAllQuiz() {
-        return quizRepository.getAllQuiz();
+    public List<Quiz> findAll() {
+        return quizRepository.findAll();
+    }
+
+    @Override
+    public int update(Quiz quiz) {
+        return 0;
+    }
+
+    @Override
+    public int delete(Quiz quiz) {
+        return 0;
     }
 }

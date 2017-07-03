@@ -1,27 +1,38 @@
-package com.womantalk.funquiz.QuizRules;
+package com.womantalk.funquiz.quizrules;
 
-import com.womantalk.funquiz.QuizRules.QuizRules;
-import com.womantalk.funquiz.QuizRules.QuizRulesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class QuizRulesServiceImpl implements QuizRulesService {
+
     @Autowired
-    private QuizRulesRepository quizRulesRepository;
+    QuizRulesRepository quizRulesRepository;
 
     @Override
-    public void save(QuizRules quizrules) {
-        quizRulesRepository.save(quizrules);
+    public QuizRules findOne(int id_rules) {
+        return quizRulesRepository.findOne(id_rules);
     }
 
     @Override
-    public QuizRules findById(int id) {
-        return quizRulesRepository.findById(id);
+    public QuizRules add(QuizRules quizRules) {
+        return null;
     }
 
     @Override
-    public List<QuizRules> getAllQuizRules() {
-        return quizRulesRepository.getAllQuizRules();
+    public List<QuizRules> findAll() {
+        return quizRulesRepository.findAll();
+    }
+
+    @Override
+    public int update(QuizRules quizRules) {
+        return 0;
+    }
+
+    @Override
+    public int delete(QuizRules quizRules) {
+        return 0;
     }
 }

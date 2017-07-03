@@ -1,6 +1,6 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import com.womantalk.funquiz.Quiz.Quiz;
+import com.womantalk.funquiz.quiz.Quiz;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,15 +14,10 @@ public class QuizType
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idQuizType;
 
-    @Column
     private String typeName;
 
     @OneToMany (mappedBy = "quizType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set <Quiz> quizs;
-
-    @Version
-    @Column(name = "optVersion", columnDefinition = "integer DEFAULT 0 ")
-    private Integer version;
 
     public QuizType() {
     }
@@ -52,11 +47,5 @@ public class QuizType
         this.quizs = quizs;
     }
 
-    public Integer getVersion() {
-        return version;
-    }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 }
