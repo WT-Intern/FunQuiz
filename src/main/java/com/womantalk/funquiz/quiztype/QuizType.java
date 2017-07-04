@@ -12,6 +12,7 @@ public class QuizType
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "serial")
     private Integer idQuizType;
 
     private String typeName;

@@ -18,9 +18,11 @@ public class QuizTypeServiceImpl implements QuizTypeService{
     }
 
     @Override
-    public QuizType add(QuizType quizType) {
-        return null;
+    public void add(QuizType quizType)
+    {
+        quizTypeRepository.add(quizType);
     }
+
 
     @Override
     public List<QuizType> findAll() {
@@ -28,8 +30,8 @@ public class QuizTypeServiceImpl implements QuizTypeService{
     }
 
     @Override
-    public QuizType update(int id_quiz_type) {
-        return quizTypeRepository.update(id_quiz_type);
+    public int update(QuizType quizType) {
+        return quizTypeRepository.update(quizType);
     }
 
     @Override

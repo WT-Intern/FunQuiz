@@ -23,10 +23,15 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
         QuizType quizType = jdbcTemplate.queryForObject(SQL, new Object[]{id_quiz_type}, new BeanPropertyRowMapper<QuizType>(QuizType.class));
         return quizType;
     }
+
     @Override
-    public QuizType add(QuizType quizType) {
-        return null;
+    public void add(QuizType quizType)
+    {
+        String sql = QuizTypeQuery.INSERT_QUIZ_TYPE;
+        jdbcTemplate.update(sql, quizType.getTypeName());
+
     }
+
 
     @Override
     public List<QuizType> findAll() {
@@ -36,8 +41,9 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
     }
 
     @Override
-    public QuizType update(int id_quiz_type) {
-      return null;
+    public int update(QuizType quizType) {
+        String SQL = QuizTypeQuery.UPDATE_QUIZ_TYPE;
+        return jdbcTemplate.update(SQL, quizType.getTypeName(), quizType.getIdQuizType());
     }
 
     @Override

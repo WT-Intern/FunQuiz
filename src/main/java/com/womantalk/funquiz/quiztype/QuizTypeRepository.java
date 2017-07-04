@@ -7,11 +7,11 @@ public interface QuizTypeRepository {
 
     QuizType findOne(int id_quiz_type);
 
-    QuizType add(QuizType quizType);
+    public void add(QuizType quizType);
 
     List<QuizType> findAll();
 
-    QuizType update(int id_quiz_type);
+    int update(QuizType quizType);
 
     void delete(int quizType);
 

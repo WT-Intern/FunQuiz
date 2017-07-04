@@ -16,17 +16,25 @@ public class QuizTypeController {
     @Autowired
     private QuizTypeService quizTypeService;
 
-    @RequestMapping(value = "quiztype", method = RequestMethod.GET)
+    @RequestMapping(value = "/quiztype", method = RequestMethod.GET)
     public String QuizTypeList(ModelMap modelMap)
     {
         modelMap.put("quiztype", quizTypeService.findAll());
         return "quiztype";
     }
 
-    @RequestMapping(value = "/quiztype/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/quiztype/edit/{id}",method = RequestMethod.GET)
     public String editData(@PathVariable Integer id, Model model){
         model.addAttribute("quiztype", quizTypeService.findOne(id));
-        return "quiztype";
+       // model.addAttribute("quiztype", new QuizType());
+        return "formquiztype";
+    }
+
+    @RequestMapping(value = "/tambah",method = RequestMethod.POST)
+    public String editData(QuizType quizType, Model model){
+        quizTypeService.update(quizType);
+        //quizTypeService.add(quizType);
+        return "redirect:/quiztype";
     }
 
     @RequestMapping(value = "/quiztype/delete/{id}")
@@ -35,16 +43,19 @@ public class QuizTypeController {
         return "redirect:/quiztype";
     }
 
-    @RequestMapping(value = "/quiztype/create" , method = RequestMethod.GET)
-    public String viewForm(Model model)
+    /*@RequestMapping(value = "/add",method = RequestMethod.POST)
+    public String tambahData(QuizType quizType, Model model)
     {
-        model.addAttribute("quiztype", new QuizType());
+        quizTypeService.add(quizType);
+        return "redirect:/quiztype";
+    }*/
+
+    @RequestMapping("/test")
+    public String test()
+    {
         return "formquiztype";
     }
 
-    @RequestMapping(value = "/quiztype/create", method = RequestMethod.POST)
-    public String update(Model model, QuizType quizType){
-        model.addAttribute("quiztype",quizTypeService.update(quizType));
-        return "redirect:/formquiztype";
-    }
+
+
 }
