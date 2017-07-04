@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
@@ -12,6 +13,7 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    private DataSource dataSource;
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -27,11 +29,11 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
     @Override
     public void add(QuizType quizType)
     {
-        String sql = QuizTypeQuery.INSERT_QUIZ_TYPE;
-        jdbcTemplate.update(sql, quizType.getTypeName());
+        String SQL = QuizTypeQuery.INSERT_QUIZ_TYPE;
+        jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate.update(SQL, new Object[] {quizType.getIdQuizType(), quizType.getTypeName()});
 
     }
-
 
     @Override
     public List<QuizType> findAll() {

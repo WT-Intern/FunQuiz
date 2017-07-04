@@ -26,14 +26,12 @@ public class QuizTypeController {
     @RequestMapping(value = "/quiztype/edit/{id}",method = RequestMethod.GET)
     public String editData(@PathVariable Integer id, Model model){
         model.addAttribute("quiztype", quizTypeService.findOne(id));
-       // model.addAttribute("quiztype", new QuizType());
         return "formquiztype";
     }
 
     @RequestMapping(value = "/tambah",method = RequestMethod.POST)
-    public String editData(QuizType quizType, Model model){
+    public String editData(QuizType quizType){
         quizTypeService.update(quizType);
-        //quizTypeService.add(quizType);
         return "redirect:/quiztype";
     }
 
@@ -42,20 +40,5 @@ public class QuizTypeController {
         quizTypeService.delete(id);
         return "redirect:/quiztype";
     }
-
-    /*@RequestMapping(value = "/add",method = RequestMethod.POST)
-    public String tambahData(QuizType quizType, Model model)
-    {
-        quizTypeService.add(quizType);
-        return "redirect:/quiztype";
-    }*/
-
-    @RequestMapping("/test")
-    public String test()
-    {
-        return "formquiztype";
-    }
-
-
 
 }

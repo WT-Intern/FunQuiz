@@ -11,6 +11,7 @@ public class Option
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "serial")
     private Integer idOption;
 
     @Column

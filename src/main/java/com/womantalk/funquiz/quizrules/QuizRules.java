@@ -11,6 +11,7 @@ public class QuizRules
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "serial")
     private Integer idRules;
 
     @Column

@@ -13,6 +13,7 @@ public class Question
 {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "serial")
     private Integer idQuestion;
 
     @Column
