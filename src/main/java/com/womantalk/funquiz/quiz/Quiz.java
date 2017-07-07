@@ -1,7 +1,5 @@
 package com.womantalk.funquiz.Quiz;
 
-
-
 import com.womantalk.funquiz.Question.Question;
 import com.womantalk.funquiz.QuizRules.QuizRules;
 import com.womantalk.funquiz.QuizType.QuizType;
@@ -15,7 +13,8 @@ import java.util.Set;
 public class Quiz
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (columnDefinition = "serial")
     private Integer idQuiz;
 
     @Column

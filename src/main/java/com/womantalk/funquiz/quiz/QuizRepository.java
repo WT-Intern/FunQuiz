@@ -1,17 +1,9 @@
 package com.womantalk.funquiz.Quiz;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface QuizRepository {
+public interface QuizRepository extends JpaRepository<Quiz, Integer> {
 
-    Quiz findOne(int id_quiz);
-
-    Quiz add(Quiz quiz);
-
-    List<Quiz> findAll();
-
-    int update(Quiz quiz);
-
-    int delete(Quiz quiz);
 }
