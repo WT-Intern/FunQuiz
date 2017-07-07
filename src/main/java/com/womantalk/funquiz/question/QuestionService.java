@@ -14,4 +14,6 @@ public interface QuestionService {
     int update(Question question);
 
     int delete(Question question);
+
+    void save(Question question);
 }
