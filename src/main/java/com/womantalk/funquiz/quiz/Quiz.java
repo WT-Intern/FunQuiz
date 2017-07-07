@@ -1,10 +1,8 @@
-package com.womantalk.funquiz.quiz;
+package com.womantalk.funquiz.Quiz;
 
-
-
-import com.womantalk.funquiz.question.Question;
-import com.womantalk.funquiz.quizrules.QuizRules;
-import com.womantalk.funquiz.quiztype.QuizType;
+import com.womantalk.funquiz.Question.Question;
+import com.womantalk.funquiz.QuizRules.QuizRules;
+import com.womantalk.funquiz.QuizType.QuizType;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -15,8 +13,8 @@ import java.util.Set;
 public class Quiz
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (columnDefinition = "serial")
     private Integer idQuiz;
 
     @Column
@@ -53,10 +51,6 @@ public class Quiz
 
     public QuizType getQuizType() {
         return quizType;
-    }
-
-    public int getQuizId(){
-        return quizType.getIdQuizType();
     }
 
     public void setQuizType(QuizType quizType) {
