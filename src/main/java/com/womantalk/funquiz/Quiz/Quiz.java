@@ -13,7 +13,8 @@ import java.util.Set;
 public class Quiz
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (columnDefinition = "serial")
     private Integer idQuiz;
 
     @Column

@@ -5,7 +5,9 @@ import com.womantalk.funquiz.QuizType.QuizType;
 import java.util.List;
 
 public interface QuizTypeService {
-    void save (QuizType quiztype);
+    QuizType save (QuizType quiztype);
     QuizType findById (int id);
-    List<QuizType> getAllQuizType();
+    List<QuizType> findAll();
+    void deleteById (int id);
+    QuizType update (QuizType quizType);
 }

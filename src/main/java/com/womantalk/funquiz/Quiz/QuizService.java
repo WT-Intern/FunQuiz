@@ -5,7 +5,9 @@ import com.womantalk.funquiz.Quiz.Quiz;
 import java.util.List;
 
 public interface QuizService {
-    void save (Quiz quiz);
+    Quiz save (Quiz quiz);
     Quiz findById (int id);
-    List<Quiz> getAllQuiz();
+    List<Quiz> findAll();
+    void deleteById (int id);
+    Quiz update (Quiz quiz);
 }
