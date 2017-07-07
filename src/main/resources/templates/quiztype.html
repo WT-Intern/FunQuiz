@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fun Quiz</title>
+</head>
+<body>
+    <h2>Quiz Type</h2>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Type Name</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="quiztypes : ${quiztype}">
+            <td th:text="${quiztypes.idQuizType}"></td>
+            <td th:text="${quiztypes.typeName}"></td>
+            <td>
+                <a th:href="${'student/update/'+quiztypes.idQuizType}">Update</a>
+                <a th:href="${'quiztype/delete/'+quiztypes.idQuizType}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
