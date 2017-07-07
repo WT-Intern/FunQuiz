@@ -1,6 +1,6 @@
-package com.womantalk.funquiz.option;
+package com.womantalk.funquiz.Option;
 
-import com.womantalk.funquiz.question.Question;
+import com.womantalk.funquiz.Question.Question;
 
 import javax.persistence.*;
 

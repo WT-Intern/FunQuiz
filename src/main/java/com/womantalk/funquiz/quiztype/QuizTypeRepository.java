@@ -1,18 +1,12 @@
-package com.womantalk.funquiz.quiztype;
+package com.womantalk.funquiz.QuizType;
 
+import com.womantalk.funquiz.QuizType.QuizType;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface QuizTypeRepository {
-
-    QuizType findOne(int id_quiz_type);
-
-    QuizType add(QuizType quizType);
-
-    List<QuizType> findAll();
-
-    QuizType update(int id_quiz_type);
-
-    void delete(int quizType);
+@Repository
+public interface QuizTypeRepository extends JpaRepository<QuizType, Integer> {
 
 }

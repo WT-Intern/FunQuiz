@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.quiz;
+package com.womantalk.funquiz.Quiz;
 
 
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
-package com.womantalk.funquiz.quizrules;
+package com.womantalk.funquiz.QuizRules;
 
 
-import com.womantalk.funquiz.quizrules.QuizRules;
+import com.womantalk.funquiz.QuizRules.QuizRules;
 
 import java.util.List;
 

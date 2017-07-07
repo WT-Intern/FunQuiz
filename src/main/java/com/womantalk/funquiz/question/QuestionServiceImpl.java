@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.question;
+package com.womantalk.funquiz.Question;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
