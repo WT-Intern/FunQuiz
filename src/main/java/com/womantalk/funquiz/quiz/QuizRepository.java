@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.Quiz;
+package com.womantalk.funquiz.quiz;
 
 
 import java.util.List;

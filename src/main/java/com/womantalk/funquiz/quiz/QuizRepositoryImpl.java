@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.Quiz;
+package com.womantalk.funquiz.quiz;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

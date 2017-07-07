@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.QuizRules;
+package com.womantalk.funquiz.quizrules;
 
 /**
  * Created by gloria on 03/07/2017.

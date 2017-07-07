@@ -1,6 +1,6 @@
-package com.womantalk.funquiz.QuizType;
+package com.womantalk.funquiz.quiztype;
 
-import com.womantalk.funquiz.QuizType.QuizType;
+import com.womantalk.funquiz.quiztype.QuizType;
 
 import java.util.List;
 

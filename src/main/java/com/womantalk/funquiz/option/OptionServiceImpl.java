@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.Option;
+package com.womantalk.funquiz.option;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
