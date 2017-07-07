@@ -36,12 +36,13 @@ public class QuizTypeRepositoryImpl implements QuizTypeRepository {
     }
 
     @Override
-    public int update(QuizType quizType) {
-        return 0;
+    public QuizType update(int id_quiz_type) {
+      return null;
     }
 
     @Override
-    public int delete(QuizType quizType) {
-        return 0;
+    public void delete(int quizType) {
+        String SQL = QuizTypeQuery.DELETE_QUIZ_TYPE;
+        jdbcTemplate.update(SQL, new Object[] { Integer.valueOf(quizType) });
     }
 }

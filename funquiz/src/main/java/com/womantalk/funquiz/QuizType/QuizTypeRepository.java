@@ -11,8 +11,8 @@ public interface QuizTypeRepository {
 
     List<QuizType> findAll();
 
-    int update(QuizType quizType);
+    QuizType update(int id_quiz_type);
 
-    int delete(QuizType quizType);
+    void delete(int quizType);
 
 }

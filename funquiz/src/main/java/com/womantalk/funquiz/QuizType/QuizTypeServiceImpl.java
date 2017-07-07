@@ -28,12 +28,12 @@ public class QuizTypeServiceImpl implements QuizTypeService{
     }
 
     @Override
-    public int update(QuizType quizType) {
-        return 0;
+    public QuizType update(int id_quiz_type) {
+        return quizTypeRepository.update(id_quiz_type);
     }
 
     @Override
-    public int delete(QuizType quizType) {
-        return 0;
+    public void delete(int quizType) {
+        quizTypeRepository.delete(quizType);
     }
 }

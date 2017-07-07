@@ -28,4 +28,23 @@ public class QuizTypeController {
         model.addAttribute("quiztype", quizTypeService.findOne(id));
         return "quiztype";
     }
+
+    @RequestMapping(value = "/quiztype/delete/{id}")
+    public String delete(@PathVariable Integer id){
+        quizTypeService.delete(id);
+        return "redirect:/quiztype";
+    }
+
+    @RequestMapping(value = "/quiztype/create" , method = RequestMethod.GET)
+    public String viewForm(Model model)
+    {
+        model.addAttribute("quiztype", new QuizType());
+        return "formquiztype";
+    }
+
+    @RequestMapping(value = "/quiztype/create", method = RequestMethod.POST)
+    public String update(Model model, QuizType quizType){
+        model.addAttribute("quiztype",quizTypeService.update(quizType));
+        return "redirect:/formquiztype";
+    }
 }
