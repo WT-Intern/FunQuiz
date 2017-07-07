@@ -11,14 +11,24 @@ import java.util.Set;
 public class QuizType
 {
     @Id
+<<<<<<< HEAD
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "serial")
+=======
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (columnDefinition = "serial")
+>>>>>>> 6825a95797fd57f686d42ddf0cefa960619a72b3
     private Integer idQuizType;
 
+    @Column
     private String typeName;
 
     @OneToMany (mappedBy = "quizType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set <Quiz> quizs;
+
+    @Version
+    @Column(name = "optVersion", columnDefinition = "integer DEFAULT 0 ")
+    private Integer version;
 
     public QuizType() {
     }
@@ -48,5 +58,11 @@ public class QuizType
         this.quizs = quizs;
     }
 
+    public Integer getVersion() {
+        return version;
+    }
 
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }

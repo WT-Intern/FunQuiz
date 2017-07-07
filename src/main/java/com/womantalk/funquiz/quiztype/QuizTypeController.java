@@ -42,13 +42,21 @@ public class QuizTypeController {
     }
 
     @RequestMapping(value = "/quiztype/add", method = RequestMethod.POST)
+<<<<<<< HEAD
     public String add(Model model, QuizType quizType) {
+=======
+    public String add(@PathVariable Model model, QuizType quizType) {
+>>>>>>> 6825a95797fd57f686d42ddf0cefa960619a72b3
         model.addAttribute("quiztype", quizTypeService.save(quizType));
         return "redirect:/quiztype";
     }
 
     @RequestMapping(value = "/quiztype/add", method = RequestMethod.GET)
+<<<<<<< HEAD
     public String addForm( Model model, QuizType quizType)
+=======
+    public String addForm(@PathVariable Model model, QuizType quizType)
+>>>>>>> 6825a95797fd57f686d42ddf0cefa960619a72b3
     {
         model.addAttribute("quiztype", new QuizType());
         return "quizTypeAdd";
