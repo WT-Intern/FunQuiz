@@ -5,37 +5,42 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
-public class QuizTypeServiceImpl implements QuizTypeService{
-
+public class QuizTypeServiceImpl implements QuizTypeService {
     @Autowired
     private QuizTypeRepository quizTypeRepository;
 
+
     @Override
-    public QuizType findOne(int id_quiz_type) {
-        return quizTypeRepository.findOne(id_quiz_type);
+    public QuizType save(QuizType quiztype) {
+        return  quizTypeRepository.save(quiztype);
+
     }
 
     @Override
-    public void add(QuizType quizType)
-    {
-        quizTypeRepository.add(quizType);
+    public QuizType findById(int id) {
+        return quizTypeRepository.findOne(id);
     }
-
 
     @Override
     public List<QuizType> findAll() {
-        return quizTypeRepository.findAll();
+        List quizTypeList = quizTypeRepository.findAll();
+        if (quizTypeList != null) {
+            return quizTypeList;
+        } else {
+            return null;
+        }
     }
 
     @Override
-    public int update(QuizType quizType) {
-        return quizTypeRepository.update(quizType);
+    public void deleteById(int id) {
+        quizTypeRepository.delete(id);
     }
 
     @Override
-    public void delete(int quizType) {
-        quizTypeRepository.delete(quizType);
+    public QuizType update(QuizType quizType) {
+        QuizType quizTypeUpdate = findById(quizType.getIdQuizType());
+        quizTypeUpdate.setTypeName(quizType.getTypeName());
+        return quizTypeRepository.saveAndFlush(quizTypeUpdate);
     }
 }

@@ -1,7 +1,5 @@
 package com.womantalk.funquiz.quiztype;
 
-
-import com.womantalk.funquiz.quiztype.QuizTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,35 +8,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Created by Dewi Kartika on 06/07/2017.
+ */
 @Controller
 public class QuizTypeController {
-
     @Autowired
-    private QuizTypeService quizTypeService;
+    QuizTypeService quizTypeService;
 
     @RequestMapping(value = "/quiztype", method = RequestMethod.GET)
-    public String QuizTypeList(ModelMap modelMap)
+    public String quizTypeList(ModelMap modelMap)
     {
         modelMap.put("quiztype", quizTypeService.findAll());
-        return "quiztype";
-    }
-
-    @RequestMapping(value = "/quiztype/edit/{id}",method = RequestMethod.GET)
-    public String editData(@PathVariable Integer id, Model model){
-        model.addAttribute("quiztype", quizTypeService.findOne(id));
-        return "formquiztype";
-    }
-
-    @RequestMapping(value = "/tambah",method = RequestMethod.POST)
-    public String editData(QuizType quizType){
-        quizTypeService.update(quizType);
-        return "redirect:/quiztype";
+        return "quizTypeHome";
     }
 
     @RequestMapping(value = "/quiztype/delete/{id}")
     public String delete(@PathVariable Integer id){
-        quizTypeService.delete(id);
+       quizTypeService.deleteById(id);
+       return "redirect:/quiztype";
+    }
+
+    @RequestMapping(value = "/quiztype/update",method = RequestMethod.POST)
+    public String update(QuizType quizType){
+        quizTypeService.update(quizType);
         return "redirect:/quiztype";
+    }
+
+    @RequestMapping(value = "/quiztype/update/{id}",method = RequestMethod.GET)
+    public String updateForm(@PathVariable Integer id, Model model){
+        model.addAttribute("quiztype", quizTypeService.findById(id));
+        return "quizTypeUpdate";
+    }
+
+    @RequestMapping(value = "/quiztype/add", method = RequestMethod.POST)
+    public String add(Model model, QuizType quizType) {
+        model.addAttribute("quiztype", quizTypeService.save(quizType));
+        return "redirect:/quiztype";
+    }
+
+    @RequestMapping(value = "/quiztype/add", method = RequestMethod.GET)
+    public String addForm( Model model, QuizType quizType)
+    {
+        model.addAttribute("quiztype", new QuizType());
+        return "quizTypeAdd";
     }
 
 }

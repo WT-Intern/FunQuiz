@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Quiz Type Update</title>
+</head>
+<body>
+    <h1>Form Update Quiz Type</h1>
+    <form th:object="${quiztype}" th:action="@{/quiztype/update}" method="POST">
+        <input type="hidden" th:field="*{idQuizType}"/>
+        <label>Type Name : </label>
+        <input th:type="text" th:field="*{typeName}"/>
+        <label><button type="submit" >Update Type Name</button></label>
+    </form>
+</body>
+</html>

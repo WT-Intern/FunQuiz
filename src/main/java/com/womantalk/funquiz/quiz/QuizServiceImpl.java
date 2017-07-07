@@ -1,13 +1,18 @@
 package com.womantalk.funquiz.quiz;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 @Service
 public class QuizServiceImpl implements QuizService {
 
+
+    @Autowired
     private QuizRepository quizRepository;
 
     @Override
@@ -16,22 +21,36 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public Quiz add(Quiz quiz) {
-        return null;
-    }
-
-    @Override
     public List<Quiz> findAll() {
-        return quizRepository.findAll();
+        List<Quiz> quizList = quizRepository.findAll();
+        if(quizList!=null) {
+            return quizList;
+        }else {
+            return null;
+        }
     }
 
     @Override
-    public int update(Quiz quiz) {
-        return 0;
+    public Quiz save(Quiz quiz) {
+        return quizRepository.save(quiz);
     }
 
     @Override
-    public int delete(Quiz quiz) {
-        return 0;
+    public Quiz delete(int id_quiz) {
+        Quiz quiz = findOne(id_quiz);
+        if(quiz!=null){
+            quizRepository.delete(id_quiz);
+            return quiz;
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public Quiz update(Quiz quiz) {
+        Quiz quizUpdate = findOne(quiz.getIdQuiz());
+        quizUpdate.setJudulQuiz(quiz.getJudulQuiz());
+        quizUpdate.setQuizType(quizUpdate.getQuizType());
+        return quizRepository.saveAndFlush(quizUpdate);
     }
 }

@@ -53,6 +53,10 @@ public class Quiz
         return quizType;
     }
 
+    public int getQuizId(){
+        return quizType.getIdQuizType();
+    }
+
     public void setQuizType(QuizType quizType) {
         this.quizType = quizType;
     }

@@ -1,17 +1,13 @@
 package com.womantalk.funquiz.quiztype;
 
+import com.womantalk.funquiz.quiztype.QuizType;
 
 import java.util.List;
 
 public interface QuizTypeService {
-
-    QuizType findOne(int id_quiz_type);
-
-    public void add (QuizType quizType);
-
+    QuizType save(QuizType quiztype);
+    QuizType findById(int id);
     List<QuizType> findAll();
-
-    int update(QuizType quizType);
-
-    void delete(int quizType);
+    void deleteById(int id);
+    QuizType update(QuizType quizType);
 }

@@ -6,12 +6,12 @@ public interface QuizService {
 
     Quiz findOne(int id_quiz);
 
-    Quiz add(Quiz quiz);
-
     List<Quiz> findAll();
 
-    int update(Quiz quiz);
+    Quiz save(Quiz quiz);
 
-    int delete(Quiz quiz);
+    Quiz delete(int quiz);
+
+    Quiz update(Quiz quiz);
 
 }
