@@ -11,13 +11,9 @@ import java.util.Set;
 public class QuizType
 {
     @Id
-<<<<<<< HEAD
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "serial")
-=======
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (columnDefinition = "serial")
->>>>>>> 6825a95797fd57f686d42ddf0cefa960619a72b3
+
     private Integer idQuizType;
 
     @Column

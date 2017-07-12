@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.qption;
+package com.womantalk.funquiz.option;
 
 import org.springframework.stereotype.Controller;
 
