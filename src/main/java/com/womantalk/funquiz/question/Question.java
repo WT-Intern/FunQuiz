@@ -12,15 +12,17 @@ import java.util.Set;
 public class Question
 {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (columnDefinition = "serial")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name= "id_question", columnDefinition = "serial")
     private Integer idQuestion;
 
-    @Column
+
     private String question;
 
+    private String imageURL;
+
     @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "idQuiz")
+    @JoinColumn (name = "id_quiz")
     private Quiz quiz;
 
     @OneToMany (mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -41,8 +43,17 @@ public class Question
         return question;
     }
 
-    public void setQuestion(String question) {
+    public void setQuestion(String question)
+    {
         this.question = question;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public Quiz getQuiz() {

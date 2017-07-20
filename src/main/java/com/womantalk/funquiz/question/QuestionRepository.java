@@ -1,11 +1,14 @@
 package com.womantalk.funquiz.question;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface QuestionRepository extends JpaRepository<Question, Integer>
+@Repository
+public interface QuestionRepository extends JpaRepository <Question, Integer>
 {
-    List<Question> findQuestionByQuizIdQuiz (int idQuiz);
+
+    List <Question> findByQuizIdQuiz(int id);
 
 }

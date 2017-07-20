@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Option
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (columnDefinition = "serial")
     private Integer idOption;
 
@@ -27,7 +27,7 @@ public class Option
     private Integer value;
 
     @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "idQuestion")
+    @JoinColumn (name = "id_question")
     private Question question;
 
     public Option() {
