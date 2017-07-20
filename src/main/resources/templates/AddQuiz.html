@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Fun Quiz</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+        <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+        <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+        <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css}" rel="stylesheet" media="screen"/>
+        <link th:href="@{css/AdminLTE.min.css}" rel="stylesheet" media="screen"/>
+        <link th:href="@{css/_all-skins.min.css}" rel="stylesheet" media="screen"/>
+        <link th:href="@{plugins/iCheck/flat/blue.css}" rel="stylesheet" media="screen"/>
+    </head>
+    <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <img th:src="@{image/womantalk.png}" class="img-box" alt="Logo Image"/>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li id="show_date"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <center><h1>Sistem Informasi Fun Quiz</h1></center>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active"><i class="fa fa-dashboard"></i> Add Quiz</li>
+                    </ol>
+                </section>
+                <section class="content">
+                    <div class="row" >
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <center> <h3 class="box-title">Form Add Quiz</h3></center>
+                                </div>
+                                    <form id="form_addquiz" class="styleform">
+                                    <div class="box-body form-group-lg">
+                                            <div class="row-section form-group">
+                                                <div id="attach">
+                                                    <label>Image</label>
+                                                    <input type="file" onchange="readURL(this);" class="btn btn-info button-animation rounded" />
+                                                </div>
+                                                <div id="preview">
+                                                    <a href="#" class="preview" onclick="getPreview();">Preview</a><br/>
+                                                </div><br/>
+                                                <div>
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Enter the title" id="title"/>
+                                                </div><br/>
+                                                <div>
+                                                    <label>Type</label>
+                                                    <select id="optionType" class="form-control">
+                                                        <option>Select Type of Quiz</option>
+                                                        <option>True False</option>
+                                                        <option>Correct Answer</option>
+                                                        <option>Personality</option>
+                                                    </select>
+                                                </div><br/>
+                                                <div>
+                                                    <input type="Text" id="dateTime"/><img th:src="@{image/cal.gif}" onclick="javascript:NewCssCal('dateTime')" style="cursor:pointer"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-footer"></div>
+                                    </form>
+
+                                    <form id="truefalse" class="hiddenContent styleform">
+                                        <div id="tambahquestion" class="box-body">
+                                        <div class="form-group-sm">
+                                            <div class="row-section form-group">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <span class="glyphicon glyphicon-trash" title="Close"></span>
+                                            </button>
+                                            <div class="row-section" id="add_question">
+                                                <div>
+                                                    <label>Question</label>
+                                                </div>
+                                                <div><input type="text" class="form-control" placeholder="Enter the question"/></div>
+                                                <div><label>Option</label></div>
+                                                <div id="option-true">
+                                                    <input type="checkbox" class="icheckbox_flat-blue"/><input type="text" class="option" value="True"/>
+                                                </div>
+                                                <div id="option-false">
+                                                    <input type="checkbox" class="icheckbox_flat-blue"/><input type="text" class="option" value="False"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-footer">
+                                            <center><div onclick="tambahQuestion()"><span class="btn btn-primary">Add-Question</span></div>
+                                                <button class="btn btn-primary" type="button" onClick="location.href='Result.html'"><span>Add Result</span>
+                                                </button>
+                                            </center>
+                                        </div>
+                                        </div>
+                                        </div>
+                                    </form>
+
+                                    <form id="correctanswer" class="hiddenContent styleform">
+                                        <div class="box-body form-group-sm" id="qtf">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <span class="glyphicon glyphicon-trash" title="Close"></span>
+                                            </button>
+                                            <div class="row-section">
+                                                <div>
+                                                    <label id="Question[0]">Question 1</label>
+                                                </div>
+                                                <div><textarea id="text-question" type="text" class="form-control" data-autosize-input='{ "space": 40 }' placeholder="Enter the question"></textarea></div>
+                                            </div><br/>
+                                            <div><label>Option</label></div>
+                                            <div id="optionCorrectAnswer" >
+                                                    <div id="boxoption">
+                                                            <div id="imageoption">
+                                                                <button type="button" class="close" aria-hidden="true">
+                                                                <span class="glyphicon glyphicon-picture"></span>
+                                                                </button>
+                                                            </div>
+                                                            <div id="inputoption">
+                                                                <input id="text_asnwer" type="text" placeholder=" Answer Text"/>
+                                                                <button id="remove" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                                <span class="glyphicon glyphicon-trash" title="Close"></span></button>
+                                                            </div>
+                                                            <div id="correctoption">
+                                                                <label>Correct Answer</label>
+                                                                <input type="checkbox" class="icheckbox_flat-blue"/>
+                                                            </div>
+                                                    </div><br/>
+                                                    <div class="field hiddenContent" align="left" id="attachimage">
+                                                        <input type="file"  id="files" name="files[]" class="btn btn-primary button-animation rounded" />
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-footer">
+                                            <!--<center><button class="btn btn-primary button-animation rounded" type="button" onclick="add_question();"><span class="glyphicon glyphicon-plus">Add-Question</span></button> <button class="btn btn-primary button-animation rounded" type="button" onClick="location.href='Result.html'"><span>Add Result</span></button></center>-->
+                                            <center><input type="button" id="AddItem" value="Add" /></center>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                </section>
+            </div>
+        <footer class="main-footer">
+            <center><strong>Copyright &copy; 2017-2018<a href="index.html">Womantalk Divison</a>.</strong> All rights reserved.</center>
+        </footer>
+        </div>
+    <script th:src="@{plugins/jQuery/jquery-2.2.3.min.js}"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <script th:src="@{js/app.min.js}"></script>
+    <script th:src="@{js/demo.js}"></script>
+    <script th:src="@{js/date.js}"></script>
+    <script th:src="@{js/jquery.uploadPreview.min.js}"></script>
+    <script th:src="@{js/datetimepicker_css.js}"></script>
+    <script th:src="@{plugins/iCheck/icheck.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+    </body>
+</html>
