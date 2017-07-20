@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fmt="http://www.w3.org/1999/html">
+<head>
+    <title>Fun Quiz</title>
+</head>
+<body>
+    <h2>Daftar Kuis</h2>
+    <div class="panel-body" th:if="${not #lists.isEmpty(quiz)}">
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Judul Kuis</th>
+            <th>Tanggal Draft</th>
+            <th>Tanggal Published</th>
+            <th>Last Modified</th>
+            <th>Tipe Kuis</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="quizs : ${quiz}">
+            <td th:text="${quizs.idQuiz}"></td>
+            <td th:text="${quizs.judulQuiz}"></td>
+            <td th:text="${quizs.draft_date}"></td>
+            <td th:text="${quizs.published_date}"></td>
+            <td th:text="${quizs.last_modified}"></td>
+            <td th:text="${quizs.quizType.typeName}"></td>
+            <td th:text="${quizs.status}"></td>
+            <td>
+                <a th:href="${'quiz/edit/'+quizs.idQuiz}">Update</a>
+                <a th:href="${'quiz/delete/'+quizs.idQuiz}">Delete</a>
+            </td>
+            <td> <div th:if="${quizs.status} != 'Published'"><a th:href="@{/publish/quiz/{id}(id=${quizs.idQuiz})}" >Published</a></div></td>
+        </tr>
+    </table>
+    <a th:href="${'/quiz/add'}">Add</a>
+    </div>
+</body>
+</html>
