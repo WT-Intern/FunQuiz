@@ -7,5 +7,5 @@ import java.util.List;
 @Repository
 public interface QuizRulesRepository extends JpaRepository<QuizRules, Integer>{
 
-    List<QuizRules> findQuizRulesByQuiz_IdQuiz(int id);
+    List<QuizRules> findAllByQuiz_IdQuiz(int id);
 }

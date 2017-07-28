@@ -17,9 +17,10 @@ public class Question
     private Integer idQuestion;
 
 
-    private String question;
+    private String text;
 
     private String imageURL;
+
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "id_quiz")
@@ -39,20 +40,20 @@ public class Question
         this.idQuestion = idQuestion;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getText() {
+        return text;
     }
 
-    public void setQuestion(String question)
-    {
-        this.question = question;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getImageURL() {
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
+    public void setImageURL(String imageURL)
+    {
         this.imageURL = imageURL;
     }
 

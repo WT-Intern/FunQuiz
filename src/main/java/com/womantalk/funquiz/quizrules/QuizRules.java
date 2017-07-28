@@ -22,7 +22,7 @@ public class QuizRules
     private Integer max;
 
     @Column
-    private Integer value;
+    private String value;
 
     @Column
     private String description;
@@ -61,11 +61,11 @@ public class QuizRules
         this.max = max;
     }
 
-    public Integer getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

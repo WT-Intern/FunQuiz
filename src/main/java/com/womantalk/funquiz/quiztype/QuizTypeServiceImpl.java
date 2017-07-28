@@ -10,20 +10,18 @@ public class QuizTypeServiceImpl implements QuizTypeService {
     @Autowired
     private QuizTypeRepository quizTypeRepository;
 
-
     @Override
-    public QuizType save(QuizType quiztype) {
-        return  quizTypeRepository.save(quiztype);
-
+    public QuizType addQuiztype(QuizType quizType) {
+        return  quizTypeRepository.save(quizType);
     }
 
     @Override
-    public QuizType findById(int id) {
-        return quizTypeRepository.findOne(id);
+    public QuizType findQuiztypebyId(int id_quiztype) {
+        return quizTypeRepository.findOne(id_quiztype);
     }
 
     @Override
-    public List<QuizType> findAll() {
+    public List<QuizType> getAllQuiztype() {
         List quizTypeList = quizTypeRepository.findAll();
         if (quizTypeList != null) {
             return quizTypeList;
@@ -33,14 +31,19 @@ public class QuizTypeServiceImpl implements QuizTypeService {
     }
 
     @Override
-    public void deleteById(int id) {
-        quizTypeRepository.delete(id);
+    public QuizType deleteQuiztype(int id_quiztype) {
+        QuizType quizType = findQuiztypebyId(id_quiztype);
+        if(quizType!=null){
+            quizTypeRepository.delete(id_quiztype);
+            return quizType;
+        }else {
+            return null;
+        }
     }
 
-    @Override
-    public QuizType update(QuizType quizType) {
-        QuizType quizTypeUpdate = findById(quizType.getIdQuizType());
-        quizTypeUpdate.setTypeName(quizType.getTypeName());
+    @Override    public QuizType updateQuiztype(QuizType quizType) {
+        QuizType quizTypeUpdate = findQuiztypebyId(quizType.getIdQuizType());
+        quizTypeUpdate.setText(quizType.getText());
         return quizTypeRepository.saveAndFlush(quizTypeUpdate);
     }
 }

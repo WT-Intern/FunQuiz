@@ -9,6 +9,6 @@ import java.util.List;
 public interface QuestionRepository extends JpaRepository <Question, Integer>
 {
 
-    List <Question> findByQuizIdQuiz(int id);
+    List <Question> findAllByQuiz_IdQuiz(int id_quiz);
 
 }

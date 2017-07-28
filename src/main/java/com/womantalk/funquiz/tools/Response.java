@@ -1,4 +1,4 @@
-package com.womantalk.client.tools;
+package com.womantalk.funquiz.tools;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

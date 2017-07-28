@@ -1,4 +1,4 @@
-package com.womantalk.client.tools;
+package com.womantalk.funquiz.tools;
 
 
 public enum ApiResponseStatus {

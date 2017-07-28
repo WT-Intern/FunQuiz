@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <title>Fun Quiz</title>
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/MainQuiz.css}" rel="stylesheet" media="screen"/>
     <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
     <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css}" rel="stylesheet" media="screen"/>
     <link th:href="@{css/AdminLTE.min.css}" rel="stylesheet" media="screen"/>
@@ -27,6 +28,7 @@
             </div>
         </nav>
     </header>
+
     <div class="content-wrapper">
         <section class="content-header">
             <center><h1>Sistem Informasi FunQuiz</h1></center>
@@ -42,7 +44,6 @@
                         <div class="box-header">
                             <h3 class="box-title">Data of FunQuiz</h3>
                         </div>
-                        <!-- /.box-header -->
                         <div class="box-body">
                             <table id="datafunquiz" class="table table-bordered table-striped">
                                 <thead>
@@ -50,133 +51,13 @@
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>Number of Question</th>
+                                    <th>Created</th>
                                     <th>Published</th>
                                     <th>Modified</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Elshadai</td>
-                                    <td>Trivia</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-primary">Published</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Jehowa</td>
-                                    <td>Trivia</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Jehowa Jire</td>
-                                    <td>Trivia</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Ebook</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Computer</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Princess</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Entertaiment</td>
-                                    <td>Firefox 1.0</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Best Job</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Great Heaven</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Valveless Trampet</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Member of up Flying</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-primary">Published</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Gecko</td>
-                                    <td>Personality</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="label label-danger">Draft</span></td>
-                                    <td><button class="btn bg-orange" type="button"><i class="glyphicon glyphicon-pencil"></i></button>   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Type</th>
-                                    <th>Number of Question</th>
-                                    <th>Published</th>
-                                    <th>Modified</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -184,31 +65,61 @@
             </div>
         </section>
     </div>
+
     <footer class="main-footer">
         <strong>Copyright &copy; 2017-2018<a href="Index.html">Womantalk Divison</a>.</strong> All rights reserved.
     </footer>
+
 </div>
 
-<script th:src="@{plugins/jQuery/jquery-2.2.3.min.js}"></script>
-<script>
-$(function () {
-    $('#datafunquiz').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true
-    });
-  });
-</script>
-<script th:src="@{js/bootstrap.min.js}"></script>
-<script th:src="@{js/app.min.js}"></script>
-<script th:src="@{js/dashboard.js}"></script>
-<script th:src="@{js/demo.js}"></script>
-<script th:src="@{js/date.js}"></script>
-<!-- DataTables -->
-<script th:src="@{plugins/datatables/jquery.dataTables.min.js}"></script>
-<script th:src="@{plugins/datatables/dataTables.bootstrap.min.js}"></script>
-</body>
+    <script th:src="@{plugins/jQuery/jquery-2.2.3.min.js}"></script>
+    <script>
+        $(function () {
+            $('#datafunquiz').DataTable({
+              "paging": true,
+              "lengthChange": true,
+              "searching": true,
+              "ordering": true,
+              "info": true,
+              "autoWidth": true,
+                "ajax" : {
+                    "url" : "http://localhost:8080/api-quiz",
+                    "type": "GET",
+                    dataSrc : 'data'
+                },
+                "columns" : [ {
+                    "data" : "judulQuiz"
+                }, {
+                    "data" : "quizType.text"
+                }, {
+                    "data" : "total_question"
+                },
+                    {
+                        "data" : "created_date"
+                    },
+                    {
+                        "data" : "published_date"
+                    },
+
+                    {
+                        "data" : "modified_date"
+                    },
+
+                    {
+                        "data" : "status"
+                    }
+                ]
+            });
+          });
+    </script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <script th:src="@{js/app.min.js}"></script>
+    <script th:src="@{js/dashboard.js}"></script>
+    <script th:src="@{js/demo.js}"></script>
+    <script th:src="@{js/date.js}"></script>
+    <script th:src="@{plugins/datatables/jquery.dataTables.min.js}"></script>
+    <script th:src="@{plugins/datatables/dataTables.bootstrap.min.js}"></script>
+
+
+    </body>
 </html>

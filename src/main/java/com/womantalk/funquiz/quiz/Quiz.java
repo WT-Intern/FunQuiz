@@ -1,8 +1,11 @@
 package com.womantalk.funquiz.quiz;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.question.Question;
 import com.womantalk.funquiz.quizrules.QuizRules;
 import com.womantalk.funquiz.quiztype.QuizType;
+import com.womantalk.funquiz.tools.View;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,31 +19,37 @@ public class Quiz
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (columnDefinition = "serial")
+    @JsonView(View.Public.class)
     private Integer idQuiz;
 
     @Column
+    @JsonView(View.Public.class)
     private String judulQuiz;
 
     @Column
     private String imageURL;
 
-    @Column(name = "status")
+    @Column
+    @JsonView(View.Public.class)
+    private Integer total_question;
+
+    @JsonView(View.Public.class)
     private String status;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "draft_date")
-    public Date draft_date;
+    @JsonView(View.Public.class)
+    public String created_date;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "published_date")
+    @JsonView(View.Public.class)
     public Date published_date;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "last_modified")
-    public Date last_modified;
+    @JsonView(View.Public.class)
+    public Date modified_date;
 
-    @ManyToOne (fetch = FetchType.LAZY , cascade = {CascadeType.ALL} )
+    @ManyToOne (fetch = FetchType.LAZY  )
     @JoinColumn (name = "idQuizType")
+    @JsonView(View.Public.class)
     private QuizType quizType;
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -72,8 +81,17 @@ public class Quiz
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
+    public void setImageURL(String imageURL)
+    {
         this.imageURL = imageURL;
+    }
+
+    public Integer getTotal_question() {
+        return total_question;
+    }
+
+    public void setTotal_question(Integer total_question) {
+        this.total_question = total_question;
     }
 
     public QuizType getQuizType() {
@@ -109,18 +127,25 @@ public class Quiz
         return quizRules;
     }
 
-    public void setQuizRules(Set<QuizRules> quizRules) {
+    public void setQuizRules(Set<QuizRules> quizRules)
+    {
         this.quizRules = quizRules;
     }
 
-    @PreUpdate
-    void lastModified() {
-        this.last_modified = new Date();
+    public String getCreated_date() {
+        return created_date;
     }
 
-    @PrePersist
-    void draftDate(){
-        this.draft_date = this.last_modified = new Date();
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
+
+    public Date getModified_date() {
+        return modified_date;
+    }
+
+    public void setModified_date(Date modified_date) {
+        this.modified_date = modified_date;
     }
 
     public Date getPublished_date() {
@@ -129,5 +154,12 @@ public class Quiz
 
     public void setPublished_date(Date published_date) {
         this.published_date = published_date;
+    }
+
+
+    @PrePersist
+    @PreUpdate
+    void modifiedDate() {
+        this.modified_date = new Date();
     }
 }

@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface QuizTypeService {
 
-    QuizType save(QuizType quiztype);
-    QuizType findById(int id);
-    List<QuizType> findAll();
-    void deleteById(int id);
-    QuizType update(QuizType quizType);
+    QuizType addQuiztype(QuizType quizType);
+    QuizType findQuiztypebyId(int id_quiztype);
+    List<QuizType> getAllQuiztype();
+    QuizType deleteQuiztype(int id_quiztype);
+    QuizType updateQuiztype(QuizType quizType);
 
 }
