@@ -1,8 +1,3 @@
-/*! Result.js
- * ================
- * @Author  Bona Simanullang
- */
-
  $(document).on("change", "#id_imatgeNewPeces", function(oEvent) {
             var file = oEvent.target.files[0];
 
@@ -35,10 +30,6 @@
 
         $('#sectiongrade').append(result);
 
-       grade++;
-
- });
-
 function previewingImage(wat) {
     var files = $('#id_imatgeNewPeces'+wat)[0].files;
         if (!files[0].type.match('image.*')) {
@@ -54,6 +45,3 @@ function previewingImage(wat) {
         readerURL.readAsDataURL(files[0]);
        }
  }
-
-
-

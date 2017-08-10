@@ -1,6 +1,11 @@
 /*! AddQuiz.js
  * ================
  * @Author  Bona Simanullang
+<<<<<<< HEAD
+=======
+ * @version 2.3.8
+ * @license MIT <http://opensource.org/licenses/MIT>
+>>>>>>> b7a91fbd877e66293e8987ab9f280d8c4167505d
  */
 
  function readURL(input) {
@@ -27,11 +32,15 @@ $('#optionType').change(function(){
     if ($(this)[0].options[0].selected) {
         $("#truefalse").hide();
         $("#correctanswer").hide();
+<<<<<<< HEAD
         $("#personality").hide();
+=======
+>>>>>>> b7a91fbd877e66293e8987ab9f280d8c4167505d
      }
     if ($(this)[0].options[1].selected) {
         $("#truefalse").show();
         $("#correctanswer").hide();
+<<<<<<< HEAD
         $("#personality").hide();
      }
     if ($(this)[0].options[2].selected) {
@@ -48,3 +57,11 @@ $('#optionType').change(function(){
 
 
 
+=======
+     }
+    if ($(this)[0].options[2].selected) {
+         $("#truefalse").hide();
+         $("#correctanswer").show();
+     }
+});
+>>>>>>> b7a91fbd877e66293e8987ab9f280d8c4167505d

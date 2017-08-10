@@ -1,10 +1,3 @@
-/*! AddQuestion.css
- * ================
- * @Author  Bona Simanullang
- * @version 2.3.8
- * @license MIT <http://opensource.org/licenses/MIT>
- */
-
 .textoption{
     margin-left:20px;
     margin-top:4px;
@@ -23,6 +16,11 @@
 .textoption-correctanswer{
     border: 0px;
     width: 619px;
+}
+
+#text_asnwer{
+    border: 0px;
+    width: 680px;
     height: 33px;
     margin-left: 5px;
 }
@@ -59,6 +57,7 @@
      float: right;
      background-color:#d5d5d5;
 }
+
 #removeoption-correctanswer{
     width:50px;
     height: 35px;
@@ -69,6 +68,12 @@
     width: 740px;
     height:30px;
     font-size: 16px;
+}
+
+#text-question{
+    width: 755px;
+    height:35px;
+    font-size: 15px;
     line-height:15px;
     min-width: 700px;
     max-width: 800px;
@@ -76,7 +81,6 @@
     resize:none;
     overflow:hidden;
 }
-
 
 input[type="file"] {
   display: block;
@@ -119,3 +123,5 @@ input[type="file"] {
 #optionpersonality{
     width: 150px;
 }
+
+

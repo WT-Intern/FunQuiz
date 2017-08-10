@@ -1,10 +1,3 @@
-/*! AddQuiz.css
- * ================
- * @Author  Bona Simanullang
- * @version 2.3.8
- * @license MIT <http://opensource.org/licenses/MIT>
- */
-
 #dateTime{
     width:200px;
     height: 34px;
@@ -23,7 +16,7 @@
     -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 }
 
-.hiddencontent {
+.hiddenContent {
    display: none;
 }
 

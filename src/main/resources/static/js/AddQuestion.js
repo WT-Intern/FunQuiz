@@ -1,4 +1,3 @@
-
 var next = 1;
 function addQuestion(){
     var n = next + 1;
@@ -20,12 +19,11 @@ function addQuestion(){
     $('#addquestion').append(isi);
     $('#addquestion' +next).slideDown('medium');
 
-    next++;
+    $("body").on("click", "#remove-truefalse", function () {
+            $(this).closest("div").remove();
+    });
 }
 
-$("body").on("click", "#remove-truefalse", function () {
-        $(this).closest("div").remove();
-});
 
 $("input:checkbox").click(function() {
     if ($(this).is(":checked")) {
@@ -117,8 +115,7 @@ function addOptionImage(optionsImage){
     optionsImageps++;
 }
 
-
-$('.textarea-question').on('keydown', function(e){
+$('#text-question').on('keydown', function(e){
     if(e.which == 13) {e.preventDefault();}
 }).on('input', function(){
     $(this).height(1);
@@ -127,7 +124,8 @@ $('.textarea-question').on('keydown', function(e){
 });
 
 
-if (window.File && window.FileList && window.FileReader) {
+  if (window.File && window.FileList && window.FileReader) {
+
     $("#files").on("change", function(e) {
       var files = e.target.files,
         filesLength = files.length;
@@ -151,7 +149,3 @@ if (window.File && window.FileList && window.FileReader) {
   } else {
     alert("Cannot attach file")
   }
-
-//  $('div.container').on('#EmpLst','change',function() {
-//        //write your change event here
-//    });

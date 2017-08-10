@@ -17,7 +17,6 @@ public class HomeController {
     public String homec(){
         return "result";
     }
-
     @RequestMapping("edit")
     public String homed() {
         return "edit";
