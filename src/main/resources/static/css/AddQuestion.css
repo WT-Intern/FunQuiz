@@ -1,0 +1,121 @@
+/*! AddQuestion.css
+ * ================
+ * @Author  Bona Simanullang
+ * @version 2.3.8
+ * @license MIT <http://opensource.org/licenses/MIT>
+ */
+
+.textoption{
+    margin-left:20px;
+    margin-top:4px;
+    width:600px;
+    height: 34px;
+    padding:6px 12px;
+    font-size:14px;
+    line-height:1.42857143;
+    color:#555;
+    background-color:#d5d5d5;
+    border:1px solid #d5d5d5;
+    border-radius:4px;
+}
+
+
+.textoption-correctanswer{
+    border: 0px;
+    width: 619px;
+    height: 33px;
+    margin-left: 5px;
+}
+
+.boxoption{
+    width: 650px;
+    height: 70px;
+    border: 1px solid #d5d5d5;
+}
+
+#boximageoption{
+        width: 50px;
+        height: 150px;
+        border: 1px solid #d5d5d5;
+}
+
+.imageoption{
+    width: 25px;
+    height: 35px;
+    border-bottom: 1px solid #d5d5d5;
+    float: left;
+}
+
+.inputoption{
+    width: 600px;
+    height: 35px;
+    border-bottom: 1px solid #d5d5d5;
+    float: left;
+}
+
+.correctoption{
+     width: 125px;
+     height: 34px;
+     float: right;
+     background-color:#d5d5d5;
+}
+#removeoption-correctanswer{
+    width:50px;
+    height: 35px;
+    float: right;
+}
+
+.textarea-question{
+    width: 740px;
+    height:30px;
+    font-size: 16px;
+    line-height:15px;
+    min-width: 700px;
+    max-width: 800px;
+    transition: width 0.25s;
+    resize:none;
+    overflow:hidden;
+}
+
+
+input[type="file"] {
+  display: block;
+}
+
+.imageThumb {
+  border: 2px solid;
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  width: 220px;
+  height: 220px;
+}
+
+.file_image {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}
+
+#correct-options{
+  display: block;
+  background: #d5d5d5;
+  border: 1px solid #d5d5d5;
+  color: #808080;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 220px;
+}
+
+#checkcorrect{
+    float: right;
+}
+
+.remove:hover {
+  background: white;
+  color: black;
+}
+
+#optionpersonality{
+    width: 150px;
+}
