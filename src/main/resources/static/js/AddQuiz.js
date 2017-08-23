@@ -40,9 +40,3 @@ $('#optionType').change(function(){
         $("#personality").show();
      }
 });
-
-
-
-
-
-

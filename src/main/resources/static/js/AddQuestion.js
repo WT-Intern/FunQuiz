@@ -342,6 +342,24 @@ $("body").on("click", "#remove-truefalse", function () {
 });
 
 
+/*var next = 0;
+function addQuestionTruefalse(){
+    length_question ++;
+    var n = next + 1;
+
+    var isi ='<div class = "form-group-md'+n+'">';    isi += '<br/><div class="row-section" id="section-truefalse'+n+'">'+
+        '<button id="remove-truefalse" type="button" class="close" data-dismiss="modal" aria-hidden="true">'+
+        '<span class="glyphicon glyphicon-remove" title="Close"></span></button>'+
+        '<div><label>Question '+n+'</label></div><div>'+
+        '<textarea id="question-truefalse'+n+'" type="text" class="textarea-question" placeholder="Enter the question"></textarea>'+
+        '</div><div><label>Option</label></div><div><input id="checkboxtrue'+n+'" type="checkbox" class="radio icheckbox_flat-blue" value="1" name="test[1][]" />'+
+        '<input id="optiontrue'+n+'" type="text" class="textoption" value="True"/></div>'+
+        '<div><input id="checkboxfalse'+n+'" type="checkbox" class="radio icheckbox_flat-blue" value="1" name="test[1][]" />'+
+        '<input id="optionfalse'+n+'" type="text" class="textoption" value="False"/></div></div></div>';    isi += '</div>';    $('#addquestion').append(isi);
+    $('#addquestion' +next).slideDown('medium');    next++;    $("body").on("click", "#remove-truefalse", function () {
+        $(this).closest("div").remove();
+    });
+}*/
 
 
 

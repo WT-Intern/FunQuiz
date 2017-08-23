@@ -1,4 +1,4 @@
-package com.womantalk.funquiz.quiz;
+package com.womantalk.funquiz.Quiz;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.option.Option;

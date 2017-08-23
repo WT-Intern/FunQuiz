@@ -25,8 +25,8 @@ $(document).on("change", "#imageResult", function(oEvent) {
                      '<img id="previewing'+(grade+1)+'" src=""/></div>'+
                      '<div ><input type="text" id="titlegrade'+(grade+1)+'" class="form-control" placeholder="Grade Title"/></div>'+
                      '<br/><div><textarea id="textarea-grade'+(grade+1)+'" rows="10" cols="104" placeholder="Grade Description">'+
-                     '</textarea></div><div><label> From : </label><input class="inputgrade" min="0" type="number" placeholder="Max" />'+
-                     '<label> To </label> <input class="inputgrade" type="number" min="0" placeholder="Min"/></div><br/></div></div>'
+                     '</textarea></div><div><label> From : </label><input class="inputgrade" type="number" placeholder="Max"/>'+
+                     '<label> To </label> <input class="inputgrade" type="number" placeholder="Min"/></div><br/></div></div>'
 
         $('#sectiongrade').append(result);
 
@@ -49,6 +49,3 @@ function previewingImage(wat) {
         readerURL.readAsDataURL(files[0]);
        }
  }
-
-
-

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Fun Quiz</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/MainQuiz.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/AdminLTE.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/_all-skins.min.css}" rel="stylesheet" media="screen"/>
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <img th:src="@{image/womantalk.png}" class="img-box" alt="Logo Image"/>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li id="show_date"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <center><h1>Sistem Informasi Fun Quiz</h1></center>
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active"><i class="fa fa-dashboard"></i> Add Quiz</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row" >
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <center> <h3 class="box-title">Result</h3></center>
+                            <form>
+                                <div class="box-body">
+                                    <div class="form-group-lg">
+                                        <div class="row-section" id="sectiongrade">
+                                            <div id ="imageplace">
+                                                <input type="file" id="id_imatgeNewPeces"/><br/>
+                                                <img id="previewing" src="" />
+                                            </div><br/>
+                                            <div ><input type="text" id="titlegrade" class="form-control" placeholder="Grade Title"/></div><br/>
+                                            <div><textarea id="textarea-grade" rows="10" cols="104" placeholder="Grade Description"></textarea>
+                                            </div><br/>
+                                            <div>
+                                                <label> From : </label>
+                                                <input class="input_grade" type="number" placeholder="Max"/>
+                                                <label> To </label>
+                                                <input class="input_grade" type="number" placeholder="Min"/>
+                                            </div><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="box-footer">
+                                <center>
+                                    <!--<div onclick="tambahResult()" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Insert</span></div>-->
+                                    <!--<input type='button' value='Add Button' id='addButton'/>-->
+                                   <!--<button type="button" class="btn btn-primary button-animation rounded"><span class="glyphicon glyphicon-plus"> Result</span></button>-->
+                                    <button id="buttongrade" type="button">Add Grade</button>
+                                    <button type="button" class="btn btn-primary button-animation rounded" onClick="location.href='Index.html'"><span>Save</span></button></center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <center><strong>Copyright &copy; 2017-2018<a href="index.html">Womantalk Divison</a>.</strong> All rights reserved.</center>
+    </footer>
+</div>
+<script th:src="@{plugins/jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{js/date.js}"></script>
+<script th:src="@{js/Result.js}"></script>
+<script th:src="@{js/app.min.js}"></script>
+<script th:src="@{js/demo.js}"></script>
+<script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+</body>
+</html>
