@@ -33,41 +33,40 @@
             <center><h1>Sistem Informasi Fun Quiz</h1></center>
             <ol class="breadcrumb">
                 <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active"><i class="fa fa-dashboard"></i> Add Quiz</li>
+                <li><a href="addquiz.html"><i class="fa fa-dashboard"></i> Add Quiz</a></li>
+                <li class="active"><i class="fa fa-dashboard"></i> Result </li>
             </ol>
         </section>
         <section class="content">
             <div class="row" >
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <center> <h3 class="box-title">Result</h3></center>
-                            <form>
-                                <div class="box-body">
-                                    <div class="form-group-lg">
-                                        <div class="row-section" id="sectiongrade">
-                                            <div id ="imageplace">
-                                                <input type="file" id="id_imatgeNewPeces"/><br/>
-                                                <img id="previewing" src="" />
-                                            </div><br/>
-                                            <div ><input type="text" id="titlegrade" class="form-control" placeholder="Grade Title"/></div><br/>
-                                            <div><textarea id="textarea-grade" rows="10" cols="104" placeholder="Grade Description"></textarea>
-                                            </div><br/>
-                                            <div>
-                                                <label> From : </label>
-                                                <input class="input_grade" type="number" placeholder="Max"/>
-                                                <label> To </label>
-                                                <input class="input_grade" type="number" placeholder="Min"/>
-                                            </div><br/>
-                                        </div>
+                        <center> <h3 class="box-title">Result Quiz</h3></center>
+                        <form>
+                            <div class="box-body" id="sectiongrade">
+                                <div class="form-group-lg">
+                                    <div class="row-section">
+                                        <!--<div>
+                                            <label>Result 1</label>
+                                            <input type="file" id="imageResult1"/>
+                                            <img id="previewing" src="" />
+                                        </div>-->
+                                        <!--<div ><input onchange="previewingImage" type="text"  class="form-control" placeholder="Grade Title"/></div><br/>
+                                        <div><textarea id="gradeDescription" value="" rows="10" cols="104" placeholder="Grade Description"></textarea>
+                                        </div>-->
+                                        <!--<div>-->
+                                        <!--<label> From : </label>-->
+                                        <!--<input class="inputgrade" id="maxValue" value="" type="number" placeholder="Max"/>-->
+                                        <!--<label> To </label>-->
+                                        <!--<input class="inputgrade" id="minValue" value="" type="number" placeholder="Min"/>-->
+                                        <!--</div><br/>-->
                                     </div>
                                 </div>
+                            </div>
                             <div class="box-footer">
                                 <center>
-                                    <!--<div onclick="tambahResult()" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Insert</span></div>-->
-                                    <!--<input type='button' value='Add Button' id='addButton'/>-->
-                                   <!--<button type="button" class="btn btn-primary button-animation rounded"><span class="glyphicon glyphicon-plus"> Result</span></button>-->
-                                    <button id="buttongrade" type="button">Add Grade</button>
-                                    <button type="button" class="btn btn-primary button-animation rounded" onClick="location.href='Index.html'"><span>Save</span></button></center>
+                                    <button  class="btn btn-primary button-animation rounded" type="button" onclick="addGrade()">Add Grade</button>
+                                    <button type="button" class="btn btn-primary button-animation rounded" onClick="populateAllData()"><span>Save</span></button></center>
                             </div>
                         </form>
                     </div>
@@ -82,7 +81,7 @@
 <script th:src="@{plugins/jQuery/jquery-2.2.3.min.js}"></script>
 <script th:src="@{js/bootstrap.min.js}"></script>
 <script th:src="@{js/date.js}"></script>
-<script th:src="@{js/Result.js}"></script>
+<script th:src="@{js/AddQuestion.js}"></script>
 <script th:src="@{js/app.min.js}"></script>
 <script th:src="@{js/demo.js}"></script>
 <script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
