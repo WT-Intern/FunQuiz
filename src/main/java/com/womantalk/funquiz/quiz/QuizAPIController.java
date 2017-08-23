@@ -1,10 +1,11 @@
-package com.womantalk.funquiz.Quiz;
+package com.womantalk.funquiz.quiz;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.option.Option;
 import com.womantalk.funquiz.option.OptionService;
 import com.womantalk.funquiz.question.Question;
 import com.womantalk.funquiz.question.QuestionService;
+import com.womantalk.funquiz.quiz.QuizService;
 import com.womantalk.funquiz.quizrules.QuizRules;
 import com.womantalk.funquiz.quizrules.QuizRulesService;
 import com.womantalk.funquiz.tools.ModelToResponseMapper;
