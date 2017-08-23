@@ -21,10 +21,18 @@ repositories {
 	mavenCentral()
 }
 
+bootRun
+		{
+			if (System.getProperty('DEBUG', 'false') == 'true') {
+				jvmArgs '-Xdebug',
+						'-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=9009'
+			}
+		}
+
 
 dependencies {
-
-
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '1.5.4.RELEASE'
+	compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
@@ -32,5 +40,4 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-
 }

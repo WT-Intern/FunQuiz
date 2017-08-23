@@ -24,23 +24,7 @@ public class QuestionServiceImpl implements QuestionService
     }
 
     @Override
-    public Question addQuestion(Question question, MultipartFile fileQuestion) {
-
-        if(!fileQuestion.isEmpty())
-        {
-            question.setImageURL(fileQuestion.getOriginalFilename());
-            String name = fileQuestion.getOriginalFilename();
-            try{
-                byte[] bytes = fileQuestion.getBytes();
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(new File("C:/Users/gloria/Documents/GVM/image/question/"+name)));
-                stream.write(bytes);
-                stream.close();
-            }catch (Exception e)
-            {
-                return null;
-            }
-        }
+    public Question addQuestion(Question question) {
         return questionRepository.save(question);
     }
 

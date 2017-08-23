@@ -1,6 +1,8 @@
 package com.womantalk.funquiz.quizrules;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.quiz.Quiz;
+import com.womantalk.funquiz.tools.View;
 
 import javax.persistence.*;
 
@@ -13,21 +15,27 @@ public class QuizRules
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (columnDefinition = "serial")
+    @JsonView(View.Public.class)
     private Integer idRules;
 
     @Column
+    @JsonView(View.Public.class)
     private  Integer min;
 
     @Column
+    @JsonView(View.Public.class)
     private Integer max;
 
     @Column
+    @JsonView(View.Public.class)
     private String value;
 
     @Column
+    @JsonView(View.Public.class)
     private String description;
 
     @Column
+    @JsonView(View.Public.class)
     private String imageURL;
 
     @ManyToOne (fetch = FetchType.LAZY)

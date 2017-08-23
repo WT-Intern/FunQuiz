@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Fun Quiz</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/AdminLTE.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{css/_all-skins.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body class="hold-transition skin-green layout-top-nav">
+<div class="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <img th:src="@{image/womantalk.png}" class="img-box" alt="Logo Image"/>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li id="show_date"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <center><h1>Sistem Informasi Womantalk</h1></center>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li class="active">Add Quiz</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row" >
+                <div class="box box-primary">
+                    <div class="box-header with-border" id="add_questionText">
+                        <center> <h3 class="box-title">Form Add Question Correct Answer</h3></center>
+                        <form id="form-correctanswer">
+                            <div class="box-body form-group-sm">
+                                <div class="row-section">
+                                    <div id="question-title"></div>
+                                    <div>
+                                        <label>Question 1</label>
+                                    </div>
+                                    <div id="attach">
+                                        <input type='file' onchange="readURL(this);"/>
+                                    </div>
+                                    <div id="preview">
+                                        <a href="#" class="preview" onclick="getPreview();">Preview</a><br/>
+                                    </div>
+                                    </div><br/>
+                                    <div id="optionCorrectAnswer" >
+                                        <div><input type="text" class="inputCorretAnswer"/> <button id="add_field_button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button></div>
+                                        <select><option>Score</option><option>1</option><option>0</option></select>
+                                    </div>
+                                </div>
+                            <div class="box-footer">
+                                <center><button class="btn btn-primary button-animation rounded" type="button" onclick="add_question();"><span class="glyphicon glyphicon-plus">Add-Question</span></button> <button class="btn btn-primary button-animation rounded" type="button" onClick="location.href='Result.html'"><span>Add Result</span></button></center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <center><strong>Copyright &copy; 2017-2018 <a href="#">Womantalk Divison</a>.</strong> All rights reserved.</center>
+    </footer>
+</div>
+<script th:src="@{jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{js/jquery-3.1.0.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:stc="@{js/jquery.js}"></script>
+<script th:src="@{js/app.min.js}"></script>
+<script th:src="@{js/demo.js}"></script>
+<script th:src="@{js/date.js}"></script>
+<script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+</body>
+</html>

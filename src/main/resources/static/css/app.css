@@ -1,0 +1,36 @@
+.optionList
+{
+    column-count: 2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.Result
+{
+    margin-bottom: 52px;
+}
+.questionOption
+{
+    margin-bottom: 34px;
+}
+
+.btn btn-primary
+{
+    width: 100%;
+}
+
+.question
+{
+    margin-bottom: 47px;
+}
+
+.css
+{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

@@ -1,8 +1,6 @@
 package com.womantalk.funquiz.quiz;
 
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -11,7 +9,7 @@ import java.util.List;
  */
 public interface QuizService
 {
-    Quiz addQuiz(Quiz quiz, @RequestParam("fileQuiz")MultipartFile fileQuiz);
+    Quiz addQuiz(Quiz quiz);
     Quiz findQuizById(int id_quiz);
     List<Quiz> getAllQuiz();
     Quiz deleteQuiz(int id_quiz);

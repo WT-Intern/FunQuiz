@@ -1,6 +1,8 @@
 package com.womantalk.funquiz.option;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.question.Question;
+import com.womantalk.funquiz.tools.View;
 
 import javax.persistence.*;
 
@@ -12,22 +14,28 @@ public class Option
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (columnDefinition = "serial")
+    @JsonView(View.Public.class)
     private Integer idOption;
 
     @Column
+    @JsonView(View.Public.class)
     private String text;
 
     @Column
+    @JsonView(View.Public.class)
     private String imageURL;
 
     @Column
+    @JsonView(View.Public.class)
     private String type;
 
     @Column
+    @JsonView(View.Public.class)
     private Integer value;
 
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "id_question")
+
     private Question question;
 
     public Option() {

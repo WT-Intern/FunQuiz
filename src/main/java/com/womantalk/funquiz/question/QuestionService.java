@@ -8,7 +8,7 @@ import java.util.List;
 public interface QuestionService
 {
     List<Question> getQuestionByIdQuiz(int id);
-    Question addQuestion(Question question, @RequestParam("fileQuestion") MultipartFile fileQuestion);
+    Question addQuestion(Question question);
     List<Question> getAllQuestion();
     Question findQuestionById(int id_question);
     Question updateQuestion (Question question);

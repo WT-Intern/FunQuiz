@@ -5,6 +5,7 @@ import com.womantalk.funquiz.quiz.Quiz;
 import com.womantalk.funquiz.tools.View;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 
@@ -16,6 +17,7 @@ public class QuizType
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (columnDefinition = "serial")
 
+    @JsonView(View.Public.class)
     private Integer idQuizType;
 
     @Column
@@ -23,11 +25,8 @@ public class QuizType
     private String text;
 
     @OneToMany (mappedBy = "quizType", orphanRemoval = true)
-    private Set <Quiz> quizs;
+    private List<Quiz> quizs;
 
-    @Version
-    @Column(name = "optVersion", columnDefinition = "integer DEFAULT 0 ")
-    private Integer version;
 
     public QuizType() {
     }
@@ -48,20 +47,11 @@ public class QuizType
         this.text = text;
     }
 
-    public Set<Quiz> getQuizs() {
+    public List<Quiz> getQuizs() {
         return quizs;
     }
 
-    public void setQuizs(Set<Quiz> quizs)
-    {
+    public void setQuizs(List<Quiz> quizs) {
         this.quizs = quizs;
-    }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
     }
 }

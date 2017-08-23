@@ -5,15 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import java.util.List;
 
 @Service
@@ -28,25 +23,10 @@ public class QuizServiceImpl implements QuizService {
     Date date = new Date();
 
     @Override
-    public Quiz addQuiz(Quiz quiz, MultipartFile fileQuiz) {
+    public Quiz addQuiz(Quiz quiz) {
 
         quiz.setStatus("draft");
         quiz.setCreated_date(dateFormat.format(date));
-
-        if(!fileQuiz.isEmpty()) {
-            quiz.setImageURL(fileQuiz.getOriginalFilename());
-            String name = fileQuiz.getOriginalFilename();
-            try {
-                byte[] bytes = fileQuiz.getBytes();
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(new File("C:/Users/gloria/Documents/GVM/image/quiz/" + name)));
-                stream.write(bytes);
-                stream.close();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-
         return quizRepository.save(quiz);
     }
 
@@ -81,6 +61,7 @@ public class QuizServiceImpl implements QuizService {
         Quiz quizUpdate = findQuizById(quiz.getIdQuiz());
         quizUpdate.setJudulQuiz(quiz.getJudulQuiz());
         quizUpdate.setImageURL(quiz.getImageURL());
+        quizUpdate.setModified_date(dateFormat.format(date));
         quizUpdate.setPublished_date(quiz.getPublished_date());
         quizUpdate.setTotal_question(quiz.getTotal_question());
         quizUpdate.setQuizType(quizUpdate.getQuizType());

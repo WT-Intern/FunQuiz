@@ -8,8 +8,10 @@ import java.util.List;
 public interface OptionService
 {
     List<Option> getOptionByIdQuestion(int id);
-    Option addOption (Option option, @RequestParam ("fileOption") MultipartFile fileOption);
+    Option addOption (Option option);
     List<Option> getAllOption();
     Option findOptionById(int id_option);
     Option updateOption(Option option);
+
+    //List<Option> createOption(List<Option> options);
 }

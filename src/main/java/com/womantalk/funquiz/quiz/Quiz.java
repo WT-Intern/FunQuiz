@@ -1,6 +1,5 @@
 package com.womantalk.funquiz.quiz;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.womantalk.funquiz.question.Question;
 import com.womantalk.funquiz.quizrules.QuizRules;
@@ -8,8 +7,7 @@ import com.womantalk.funquiz.quiztype.QuizType;
 import com.womantalk.funquiz.tools.View;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 
 @Entity
@@ -39,13 +37,13 @@ public class Quiz
     @JsonView(View.Public.class)
     public String created_date;
 
-    @Temporal(TemporalType.TIMESTAMP)
+   // @Temporal(TemporalType.TIMESTAMP)
     @JsonView(View.Public.class)
-    public Date published_date;
+    public String published_date;
 
-    @Temporal(TemporalType.TIMESTAMP)
+  //  @Temporal(TemporalType.TIMESTAMP)
     @JsonView(View.Public.class)
-    public Date modified_date;
+    public String modified_date;
 
     @ManyToOne (fetch = FetchType.LAZY  )
     @JoinColumn (name = "idQuizType")
@@ -53,10 +51,12 @@ public class Quiz
     private QuizType quizType;
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set <Question> questions;
+    @JsonView(View.Public.class)
+    private List<Question> questions;
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set <QuizRules> quizRules;
+    @JsonView(View.Public.class)
+    private List<QuizRules> quizRules;
 
     public Quiz() {
     }
@@ -115,20 +115,19 @@ public class Quiz
         this.quizType = quizType;
     }
 
-    public Set<Question> getQuestions() {
+    public List<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(Set<Question> questions) {
+    public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
 
-    public Set<QuizRules> getQuizRules() {
+    public List<QuizRules> getQuizRules() {
         return quizRules;
     }
 
-    public void setQuizRules(Set<QuizRules> quizRules)
-    {
+    public void setQuizRules(List<QuizRules> quizRules) {
         this.quizRules = quizRules;
     }
 
@@ -140,26 +139,25 @@ public class Quiz
         this.created_date = created_date;
     }
 
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
-    }
-
-    public Date getPublished_date() {
+    public String getPublished_date() {
         return published_date;
     }
 
-    public void setPublished_date(Date published_date) {
+    public void setPublished_date(String published_date) {
         this.published_date = published_date;
     }
 
+    public String getModified_date() {
+        return modified_date;
+    }
 
-    @PrePersist
+    public void setModified_date(String modified_date) {
+        this.modified_date = modified_date;
+    }
+
+   /* @PrePersist
     @PreUpdate
     void modifiedDate() {
         this.modified_date = new Date();
-    }
+    }*/
 }

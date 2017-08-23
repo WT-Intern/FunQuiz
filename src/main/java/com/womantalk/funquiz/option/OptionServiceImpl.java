@@ -21,22 +21,8 @@ public class OptionServiceImpl implements OptionService {
     }
 
     @Override
-    public Option addOption(Option option, MultipartFile fileOption) {
-        if(!fileOption.isEmpty())
-        {
-            option.setImageURL(fileOption.getOriginalFilename());
-            String name = fileOption.getOriginalFilename();
-            try{
-                byte[] bytes = fileOption.getBytes();
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(new File("C:/Users/gloria/Documents/GVM/image/option/"+name)));
-                stream.write(bytes);
-                stream.close();
-            }catch (Exception e)
-            {
-                return null;
-            }
-        }
+    public Option addOption(Option option) {
+
         return optionRepository.save(option);
     }
 
