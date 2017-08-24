@@ -84,10 +84,8 @@ public class QuizServiceImpl implements QuizService
             if( score >= quizRules.getMin() && score <= quizRules.getMax() && quizRules.getQuiz().getIdQuiz() == idQuiz)
             {
                 quizRulesList.add(quizRules);
-               /* System.out.println(score);
-                System.out.println(quizRules.getDescription());*/
-               quizRules.setRightAnswer(rightAnswer);
-               quizRules.setTotalQuestion(totalQuestion);
+                quizRules.setRightAnswer(rightAnswer);
+                quizRules.setTotalQuestion(totalQuestion);
             }
         }
         return ModelToResponseMapper.mapThisSuccess(quizRulesList);
@@ -112,33 +110,7 @@ public class QuizServiceImpl implements QuizService
         }
         return quizList;
 
-
-
-
-
-    /*    List<Quiz> quizzes = new ArrayList<>();
-        status = "draf";
-        int idMax = 3000000;
-        if (lastId == null)
-        {
-            quizzes = quizRepository.findTop2ByStatusLessThanOrderByIdQuizDesc(status, lastId);
-            lastId = 1;
-        }
-        if (lastId < idMax)
-        {
-            quizzes = quizRepository.findTop2ByStatusLessThanOrderByIdQuizDesc(status, lastId);
-        }
-        return quizzes;*/
     }
-
-
-
-    //related quiz
-  /*  @Override
-    public List<Quiz> findTop3ByQuizType(Integer idQuizType)
-    {
-        return quizRepository.findTop3ByQuizType(idQuizType);
-    }*/
 
 
     @Override

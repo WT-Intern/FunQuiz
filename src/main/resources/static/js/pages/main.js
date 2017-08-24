@@ -40,12 +40,11 @@ $(document).ready(function(){
                             wrapper.className = "itemList";
                             wrapper.appendChild(image);
                             wrapper.appendChild(title);
-                            wrapper.onclick = function () {
+                            wrapper.onclick = function ()
+                            {
                                 window.location.href = "http://localhost:8080/question?idQuiz=" + item.idQuiz;  //url
                             }
-
                             $('#list_quizzes').append(wrapper);
-
                         });
                     }
                 });
@@ -54,21 +53,6 @@ $(document).ready(function(){
             }
         }
     });
-
-
-    // $.ajax({
-    //     url: WTAPI,
-    //     type: "POST",
-    //     dataType: "json",
-    //     success: function (json) {
-    //         $.each(json.data, function (i, item) {
-    //             $("<h4>").attr('data-id',item.idQuiz)
-    //                 .append(item.judulQuiz)
-    //                 .appendTo($("#trendingQuiz"));
-    //         });
-    //     }
-    // });
-
 })
 
 function LoadFirst() {

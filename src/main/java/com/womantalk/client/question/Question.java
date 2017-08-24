@@ -22,7 +22,7 @@ public class Question
 
     @Column
     @JsonView (View.AllQuiz.class)
-    private String question;
+    private String text;
 
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn (name = "idQuiz")
@@ -46,12 +46,12 @@ public class Question
         this.idQuestion = idQuestion;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getText() {
+        return text;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Quiz getQuiz() {
